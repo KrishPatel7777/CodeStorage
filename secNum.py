@@ -32,7 +32,12 @@ while True:
             if lives == 0:
                 print("You Lost")
             else:
-                print("Try Again")
+                if gnum < num:
+                    print("To Low")
+                    print("Try Again")
+                else:
+                    print("To High")
+                    print("Try Again")
     if input("Wanna Play again(Yes/No) ? ").lower() == "yes":
         continue
     else:
