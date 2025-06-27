@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background: #111;
+                display: grid;
+                place-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .container{
+                position: relative;
+                width: 300px;
+                padding: 3px;   
+                border-radius: 10px;
+                background: #222;
+                overflow: hidden;
+            }
+            .effect{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                z-index: 0;
+                background: linear-gradient(270deg, #f22e2e, #ff00ff, #00ffff, #0033ff);
+                background-size: 600%,600%;
+                border-radius: 10px;
+                transition: opacity 0.4s ease;
+                animation-play-state: paused;
+                animation: gradientShift 5s ease infinite;
+            }
+            .email{
+                position: relative;
+                z-index: 2;
+                width: 90%;
+                padding: 15px;
+                font-size: 16px;
+                border: none;
+                border-radius: 8px;
+                background: #222;
+                color: white;
+                outline: none;
+            }
+            .email::placeholder{
+                color: #777;
+            }
+            .container:focus-within .effect{
+                opacity: 1;
+                animation-play-state: running;
+            }
+            @keyframes gradientShift{
+                0%{
+                    background-position: 0% 50%;
+                }
+                50%{
+                    background-position: 100% 50%;
+                }
+                100%{
+                    background-position: 0% 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="effect"></div>
+            <input type="email" placeholder="Enter Email" class="email">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background: grey;
+            }
+            article{
+                display: grid;
+                place-items: center;
+                height: 90vh;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+            }
+            div{
+                background: #ddd;
+                border-radius: 2rem;
+                box-shadow: inset 10px 10px 10px #999, inset -10px -10px 10px #fff;
+                width: 200px;
+                aspect-ratio: 1;
+                transition: transform 1s;
+            }
+            img{
+                position: absolute;
+                width: 8%;
+                translate: -50% -50%;
+                transition: transform 1s;
+                inset: 50%;
+            }
+            div:hover{
+                transform: rotateX(75deg);
+            }
+            div:hover + img{
+                transform: translateZ(250px) translateY(-70px);
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            <div></div>
+            <img src="gun.png" alt="">
+        </article>
+    </body>
+</html>

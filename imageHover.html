@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thor Hammer Effect</title>
+  <style>
+    body{
+        display: grid;
+        place-items: center;
+        height: 85vh;
+        background-color: grey;
+    }
+    .container {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      width: 240px;
+      height: 350px;
+      perspective: 1000px;
+      position: relative;
+    }
+
+    .image {
+      position: relative;
+      width: 240px;
+      height: 350px;
+      border-radius: 2rem;
+      transform-style: preserve-3d;
+      transition: transform 1s, filter 1s;
+    }
+
+    .thor {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem;
+      z-index: 0;
+    }
+
+    .hammer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 200px;
+      width: 230px;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 1s, transform 1s;
+      z-index: 2;
+    }
+
+    .container:hover .image {
+      transform: rotateX(30deg);
+      filter: blur(2px) grayscale(0.5);
+    }
+
+    .container:hover .hammer {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateZ(250px) translateY(-70px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image">
+      <img src="thor.jpg" class="thor" />
+    </div>
+    <img src="hammer.png" class="hammer" />
+  </div>
+</body>
+</ht
+    

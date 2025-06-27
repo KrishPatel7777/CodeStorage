@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: grid;
+                place-items: center;
+                row-gap: 20px;
+                background-color: #1e293b;
+            }
+            img{
+                height: 220px;
+                width: 170px;
+            }
+            .tag-list{
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+            .inner{
+                width: fit-content;
+                display: flex;
+                gap: 1rem;
+                animation: loop 5s linear infinite;
+            }
+            .tag{
+                display: flex;
+                border: 5px solid black;
+                align-items: center;
+                border-radius: 0.4rem;
+            }
+            .fade{
+                position: absolute;
+                background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+                inset: 0;
+                pointer-events: none;
+            }
+            @keyframes loop{
+                0%{
+                    transform: translateX(0);
+                }
+                100%{
+                    transform: translateX(-50%);
+                }
+            }
+            .tag-list2{
+                width: 30rem;
+                font-family: Arial, Helvetica, sans-serif;
+                position: relative;
+                overflow: hidden;
+            }
+            .inner2{
+                width: fit-content;
+                display: flex;
+                gap: 1rem;
+                animation: loop 5s linear infinite;
+            }
+            .tag2{
+                display: flex;
+                align-items: center;
+                gap: 0 0.2rem;
+                color: white;
+                font-size: 0.9rem;
+                background-color: #334155;
+                padding: 0.7rem 1rem;
+                border-radius: 0.4rem;
+                box-shadow: 0 0.1rem 0.2rem #00000033;
+            }
+            .tag2 span{
+                font-size: 1.2rem;
+                color: #64748b;
+            }
+            .fade2{
+                position: absolute;
+                background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+                inset: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tag-list">
+            <div class="inner">
+                <div class="tag">
+                    <img src="captainamerica.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="ironman.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="thor.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="endgame.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="doctorstrange.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="spiderman.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="infinitywar.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="hulk.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="thor.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="captainamerica.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="ironman.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="thor.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="endgame.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="doctorstrange.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="spiderman.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="infinitywar.jpg" class="span">
+                </div>
+                <div class="tag">
+                    <img src="hulk.jpg" class="span">
+                </div>
+            </div>
+            <div class="fade"></div>
+        </div>
+        <div class="tag-list2">
+            <div class="inner2">
+                <div class="tag2">
+                   <span>#</span>CSS
+                </div>
+                <div class="tag2">
+                   <span>#</span>HTML
+                </div>
+                <div class="tag2">
+                   <span>#</span>Java
+                </div>
+                <div class="tag2">
+                   <span>#</span>JavaScript
+                </div>
+                <div class="tag2">
+                   <span>#</span>C++
+                </div>
+                <div class="tag2">
+                   <span>#</span>Python
+                </div>
+                <div class="tag2">
+                   <span>#</span>Tailwind
+                </div>
+                <div class="tag2">
+                   <span>#</span>SQL
+                </div>
+                <div class="tag2">
+                   <span>#</span>UI/UX
+                </div>
+                <div class="tag2">
+                   <span>#</span>SVG
+                </div>
+            </div>
+            <div class="fade2"></div>
+        </div>  
+    </body>
+</html>

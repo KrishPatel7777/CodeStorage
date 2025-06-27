@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: grid;
+                place-items: center;
+                height: 100vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .result{
+                height: 100px;
+                background-color: #414141;
+                width: 87%;
+                margin: 15px 3px 20px 17px;
+                border-radius: 15px;
+                text-align: right;
+                align-content: center;
+                color: white;
+                font-size: 40px;
+            }
+            .calc{
+                align-items: center;
+                background: #34468D;
+                height: 410px;
+                width: 300px;
+                border-radius: 15px;
+            }
+            button{
+                margin: 0px 10px 15px 10px;
+                height: 50px;
+                width: 50px;
+                border-radius: 5px;
+                font-size: 1.5rem;
+                font-weight: bolder;
+            }
+            .op{
+                color: white;
+                background-color: #C6CB2B;
+            }
+            .num{
+                color: white;
+                background-color: #868282;
+            }
+            .res{
+                color: white;
+                background-color: greenyellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calc">
+            <div class="result"id="output"></div>
+            <button class="num"id="1"value=1>1</button>
+            <button class="num"id="2"value=2>2</button>
+            <button class="num"id="3"value=3>3</button>
+            <button class="op"id="sum">+</button>
+            <button class="num"id="4"value=4>4</button>
+            <button class="num"id="5"value=5>5</button>
+            <button class="num"id="6"value=6>6</button>
+            <button class="op"id="sub">-</button>
+            <button class="num"id="7"value=7>7</button>
+            <button class="num"id="8"value=8>8</button>
+            <button class="num"id="9"value=9>9</button>
+            <button class="op"id="mul">x</button>
+            <button class="num"id="0"value=0>0</button>
+            <button class="num"id="point"value=.>.</button>
+            <button class="res"id="out">=</button>
+            <button class="op"id="div">/</button>
+        </div>
+        <script>
+    const output = document.getElementById("output");
+    const numButtons = document.querySelectorAll(".num");
+    const opButtons = document.querySelectorAll(".op");
+    const equalBtn = document.getElementById("out");
+
+  let currentInput = "";
+  let operator = "";
+  let firstOperand = "";
+
+  // Handle number and dot inputs
+  numButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentInput += btn.value;
+      output.innerText = currentInput;
+    });
+  });
+
+  // Handle operator buttons
+  opButtons.forEach(op => {
+    op.addEventListener("click", () => {
+      if (currentInput === "") return;
+      if (firstOperand === "") {
+        firstOperand = currentInput;
+        operator = op.innerText;
+        currentInput = "";
+        output.innerText = operator;
+      }
+    });
+  });
+
+  // Handle "=" button
+  equalBtn.addEventListener("click", () => {
+    if (firstOperand === "" || currentInput === "") return;
+
+    let result;
+    const num1 = parseFloat(firstOperand);
+    const num2 = parseFloat(currentInput);
+
+    switch (operator) {
+      case "+":
+        result = num1 + num2;
+        break;
+      case "-":
+        result = num1 - num2;
+        break;
+      case "x":
+        result = num1 * num2;
+        break;
+      case "/":
+        result = num2 !== 0 ? num1 / num2 : "Error";
+        break;
+      default:
+        result = "Invalid";
+    }
+
+    output.innerText = result;
+    currentInput = result.toString();
+    firstOperand = "";
+    operator = "";
+  });
+</script>
+
+        </script>
+    </body>
+</html>

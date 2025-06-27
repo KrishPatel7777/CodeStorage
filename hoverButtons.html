@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{
+            background-color: #f0f0f0;
+            display: grid;
+            place-items: center;
+            margin: 0;
+            font-family: 'Poppins',sans-serif;
+            row-gap: 10px;
+        }
+        .btn{
+                background: white;
+                border-radius: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .btn_item{
+                position: relative;
+                padding: 10px 20px;
+            }
+            .btn_item span{
+                position: relative;
+                display: block;
+                color: #333;
+                font-weight: 600;
+                padding: 10px 15px;
+                z-index: 1;
+                font-size: 14px;
+                letter-spacing: 1px;
+                transition: color 0.3s;
+            }
+            .btn_item::before{
+                content: '';
+                position: absolute;
+                transition: transform 0.3s ease-in-out;
+                z-index: 0;
+                top: 50%;
+                left: 50%;
+                width: 180px;
+                height: 180px;
+                background-color: #ff4081;
+                border-radius: 50%;
+                transform: translate(-50%,-50%) scale(0);
+            }
+            .btn_item:hover::before{
+                transform: translate(-50%,-50%) scale(1);
+            }
+            .btn_item:hover span {
+                color: #fff;
+            }
+            button{
+                height: 50px;
+                width: 100px;
+                border-radius: 15px;
+                color: black;
+                border: 2px solid black;
+                transition: all 0.5s;
+            }
+            button:hover{
+                color: white;
+                box-shadow: inset 0 -100px 0 0 black;
+            }
+            button:active{
+                transform: scale(0.9);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="btn">
+            <div class="btn_item">
+                <span>HOVER ME</span>
+            </div>
+        </div>
+        <button>Press Me</button>
+    </body>
+</html>

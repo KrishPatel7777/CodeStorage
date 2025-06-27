@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: grid;
+                place-content: center;
+            }
+            .container{
+                height: 500px;
+                width: 500px;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                gap: 10px;
+            }
+            .container .card{
+                transition: all ease 0.5s;
+            }
+            img{
+                height: 280px;
+                width: 200px;
+                border-radius: 10px;
+            }
+            .card:not(:hover){
+                filter: grayscale(1) brightness(0.6);/*Can also use filter: blur(3px) opacity(0.5);*/
+                transform: scale(0.95);
+            }
+            .card:hover{
+                transform: scale(1.05);
+            }
+            .card:active{
+                transform: scale(0.9);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card card1"><img src="thor.jpg"></div>
+            <div class="card card2"><img src="spiderman.jpg"></div>
+            <div class="card card3"><img src="ironman.jpg"></div>
+        </div>
+    </body>
+</html>

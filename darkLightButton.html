@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                transition: background 1s;
+            }
+            body.light{
+                background-color: white;
+            }
+            body.dark{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">Press Me</button>
+        <script>
+            document.body.classList.add("light");
+            document.getElementById('btn').addEventListener('click', function()
+            {
+                document.body.classList.toggle('dark');
+                document.body.classList.toggle('light');
+            }
+        );
+        </script>
+    </body>
+</html>
